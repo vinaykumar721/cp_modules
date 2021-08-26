@@ -9,5 +9,15 @@
 # for primality (and you may need to think about that hint for a while for it to make sense!).
 
 
-def fun_nth_carolprime(n):
-    return 0
+def median(a):
+    a.sort()
+    length=len(a)
+    n=length//2
+ 
+    if length==0:
+        return None
+ 
+    if length%2==1:
+        return a[n]
+    else:   
+        return (a[n]+a[n-1])/2
