@@ -6,6 +6,10 @@
 
 
 def fun_alternatingsum(a): 
-	return 0
-
-
+    l1=[0,0]
+    for i in range(0,len(a)):
+        if(i%2)==0:
+            l1[0]+=a[i]
+        else:
+            l1[1]+=a[i]
+    return l1[0]-l1[1]
