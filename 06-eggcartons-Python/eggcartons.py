@@ -8,5 +8,5 @@ def fun_eggcartons(eggs):
         return (eggs//12)
     else:
         carton = eggs//12
-        carton += 1
+        carton += 1 
     return carton
