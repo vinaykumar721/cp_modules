@@ -5,7 +5,12 @@
 
 
 
+import math
 def fun_nearestodd(n):
-	return 0
+    n = math.ceil(n)
+    if(n%2 == 0):
+        return(int(n-1))
+    else:
+        return(int(n))
 
 
