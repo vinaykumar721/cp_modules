@@ -4,6 +4,9 @@
 # and returns the distance between those points as a int.
 
 
+import math
 def fun_distance(x1, y1, x2, y2):
-	# your code goes here
-	return 0
+    # your code goes here
+    distance = math.sqrt(((x2-x1)**2)+((y2-y1)**2))
+    # print(distance)
+    return int(distance)
