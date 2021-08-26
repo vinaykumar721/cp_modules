@@ -15,23 +15,11 @@ def power(a, b):
         return 1
     else:
         return a * power(a, b-1)
-
-
-
-
-
-
-
-
-
-
-
-
 def powerSum(n, k):
     # Your code goes here...
-    return 0
-
+    
+    return power(n,k)
 # Write your own test cases here...
-assert(powerSum(2,10) == 1025)
-assert(powerSum(3,10) == 60074)
+assert(powerSum(2,10) == 1024)
+assert(powerSum(3,10) == 59049)
 print ("All test cases passed...")
