@@ -19,6 +19,3 @@ def read2DArray():
             t.append(int(s[j]))
         a.append(t)
     return a
-
-
-
