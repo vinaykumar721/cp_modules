@@ -15,27 +15,44 @@
 # string "None"). So, for example:
 
 def topScorer(data):
-    # Your code goes here...
-    return ""
-
+    if (data == ""):
+        return None
+    k=[]
+    l=[]
+    x=data.split('\n')
+    for i in range(len(x)-1):
+        k.append(x[i].split(","))
+    for j in range(len(k)):
+        l.append(k[j][0])
+        del k[j][0]
+    z=max(k[0])
+    y=max(k[1])
+    if z>y: 
+        return l[0]
+    elif y>z: 
+        return l[1]
+    else:
+        separator = ','
+        h=(str(separator.join(l)))
+        return h
+ 
 data = '''\
 Fred,10,20,30,40
 Wilma,10,20,30
 '''
 assert(topScorer(data) == 'Fred')
-
+ 
 data = '''\
 Fred,10,20,30
 Wilma,10,20,30,40
 '''
 assert(topScorer(data) == 'Wilma')
-
+ 
 data = '''\
 Fred,11,20,30
 Wilma,10,20,30,1
 '''
 assert(topScorer(data) == 'Fred,Wilma')
-
+ 
 assert(topScorer('') == None)
 print("All test cases passed...!")
-# Hint: you may want to use both splitlines() and split(',') here!
