@@ -24,6 +24,36 @@ Thus, in this example, friendsOfFriends should return:
 }
 '''
 
+def readDict():
+    a = {}
+    n = int(input())
+    for i in range(n):
+        s = input().split()
+        a[s[0]] = set(s[1:])
+    return a
+
+
 def friendsOfFriends(d):
-    # Your code goes here...
-    return None
+    friendsoffriend={}
+    for k in d:
+        frends=d[k]
+        if(len(frends)==0):
+            friendsoffriend[k]=[]
+            continue
+        friendsoffriendsfset=set()
+        foflist=[]
+        for friend in frends:
+            if friend in d:
+                foflist.extend(d[friend])
+        friendsoffriendsfset=set(foflist)
+        foflist=[]
+        for n in friendsoffriendsfset:
+            if(n!=k and n not in d[k]):
+                foflist.append(n)
+        friendsoffriend[k]=foflist       
+    return friendsoffriend
+
+d = friendsOfFriends(readDict())
+
+for i in sorted(d.keys()):
+    print(i, sorted(d[i]))
